@@ -1,0 +1,169 @@
+#include <iostream>
+#include <cstring>
+#include <Windows.h>
+
+using namespace std;
+struct Fraction {
+	int numerator;
+	int denominator;
+};
+
+
+int task1() {
+	double sum;
+	long long sum_numerator = 0;
+	long long sum_denominator = 0;
+	int number_of_fractions;
+	cout << "Сколько дробей вы желаете расчитать: ";
+	cin >> number_of_fractions;
+	Fraction* fraction = new Fraction[number_of_fractions];
+	for (int i = 0; i < number_of_fractions; i++) {
+		cout << "Введите дробь " << i + 1 << " (в формате числитель/знаметаль): ";
+		char s = '/';
+		cin >> fraction[i].numerator >> s >> fraction[i].denominator;
+	}
+	sum_denominator = fraction[0].denominator;
+	sum_numerator += fraction[0].numerator;
+	for (int i = 1; i < number_of_fractions; i++) {
+		sum_denominator = sum_denominator * (fraction[i].denominator);
+		sum_numerator = sum_numerator * (fraction[i].denominator) + fraction[i].numerator * (fraction[i - 1].denominator);
+	}
+	sum = ((sum_numerator + 0.0) / sum_denominator) / number_of_fractions;
+	cout << "Среднее арифметическое дробей: " << sum << endl;
+	return 0;
+}
+int maxint(int number[], int number_of_numbers) {
+		int index, x = 0;
+		for (int i = 0; i < number_of_numbers; i++) {
+			if (number[i] > x) {
+				x = number[i];
+				index = i;
+			}
+		}
+		return index;
+	}
+int task2() {
+		int index, number_of_numbers;
+		cout << "Сколько целых чисел вы желаете ввести: ";
+		cin >> number_of_numbers;
+		int* number = new int[number_of_numbers];
+		cout << "Вводите целое число через enter: \n";
+		for (int i = 0; i < number_of_numbers; i++) {
+			cout << "Число " << i + 1 << ":";
+			cin >> number[i];
+		}
+		index = maxint(number, number_of_numbers);
+		cout << "Максимальное число в массиве: " << number[index] << ", его индекс: " << index;
+	return 0;
+}
+void Reversit(char str[]) {
+	int size = strlen(str), n = size / 2;
+	char buff;
+	for (int i = 0; i < n; i++) {
+		buff = str[i];
+		str[i] = str[size - 1 - i];
+		str[size - 1 - i] = buff;
+	}
+	cout << str;
+}
+
+char task3() {
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	char str[256];
+	cout << "Введите строку которая станет реверсивный: ";
+	cin.get();
+	cin.getline(str, 256);
+	Reversit(str);
+	return 0;
+}
+
+struct Employee {
+	char name[100];
+	long number;
+	void getdata() {
+		cout << "Введите данные сотрудника. \n";
+		cout << "Имя: ";
+		cin.get();
+		cin.getline(name, 100);
+		cout << "Номер: ";
+		cin >> number;
+	}
+	
+	void Putdata() {
+		cout << "В базе:\n";
+		cout << "Имя: "<< name << "  Номер: " << number;
+		cout << "\n";
+	}
+};
+
+int task4() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	Employee employees[3] = {};
+	for (int i = 0; i < 3; i++) {
+		employees[i].getdata();
+	}
+	for (int i = 0; i < 3; i++) {
+		employees[i].Putdata();
+	}
+	return 0;
+}
+struct Distance {
+	int feet;
+	int inches;
+	double sum;
+};
+int task5() {
+	Distance data[5];
+	for (int i = 0; i < 5; i++) {
+		cout << "Введите футы и дюймы. \n";
+		cout << "Футы: ";
+		cin >> data[i].feet;
+		cout << "Дюймы: ";
+		cin >> data[i].inches;
+	}
+	double sum;
+	for (int i = 0; i < 5; i++) {
+		data[i].sum = data[i].feet * 12 + data[i].inches;
+		sum = data[0].sum + data[1].sum + data[2].sum + data[3].sum + data[4].sum;
+	}
+	cout << "Среднее значиние в дюймах: " << sum / 5;
+	return 0;
+}
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int checknomber;
+	for (int checknomber = -1; checknomber != 0;) {
+		switch (checknomber)
+		{
+		case 1:
+			task1();
+			cout << "" << endl;
+			break;
+		case 2:
+			task2();
+			cout << "" << endl;
+			break;
+		case 3:
+			task3();
+			cout << "" << endl;
+			break;
+		case 4:
+			task4();
+			cout << "" << endl;
+			break;
+		case 5:
+			task5();
+			cout << "" << endl;
+			break;
+		}
+		cout << "Для окончания работы введите 0\n";
+		cout << "Введите номер задания: ";
+		cin >> checknomber;;
+	}
+}

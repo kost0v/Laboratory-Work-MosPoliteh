@@ -1,0 +1,82 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct task1 {
+	void addarrays(float *mas1,float *mas2,float *mas3,int a){
+	    for (int i=0;i<a;i++){
+	        mas3[i] = mas1[i] + mas2[i];
+	        cout << "Сумма в "<< i+1 << " ячейке: " << mas3[i] << endl;
+	    }
+	}
+	void task_main() {
+	    float mas1[2]= { 2, 3};
+	    float mas2[2]= { 6, 7};
+	    float mas3[2];
+	    addarrays(mas1,mas2,mas3,2);
+	}
+};
+struct task2 {
+	void task_main() {
+	    
+	}
+};
+struct task3 {
+	void task_main() {
+	    
+	}
+};
+struct task4 {
+	void task_main() {
+	    
+	}
+};
+struct task5 {
+	void task_main() {
+	    
+	}
+};
+
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int checknomber;
+	for (int checknomber = -1; checknomber != 0;) {
+		switch (checknomber)
+		{
+		case 1:
+			task1 t1;
+			t1.task_main();
+			
+			
+			
+			cout << "" << endl;
+			break;
+		case 2:
+			task2 t2;
+			t2.task_main();
+			cout << "" << endl;
+			break;
+		case 3:
+			task3 t3;
+			t3.task_main();
+			cout << "" << endl;
+			break;
+		case 4:
+			task4 t4;
+			t4.task_main();
+			cout << "" << endl;
+			break;
+		case 5:
+			task5 t5;
+			t5.task_main();
+			cout << "" << endl;
+			break;
+		}
+		cout << "Для окончания работы введите 0\n";
+		cout << "Введите номер задания: ";
+		cin >> checknomber;;
+	}
+
+}

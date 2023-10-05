@@ -1,0 +1,4 @@
+﻿  ConsoleApplication1.cpp
+E:\учёба\Программирование\ЛАБа 5\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(60,24): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\учёба\Программирование\ЛАБа 5\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(140,6): warning C4101: checknomber: неиспользованная локальная переменная
+  ConsoleApplication1.vcxproj -> E:\учёба\Программирование\ЛАБа 5\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

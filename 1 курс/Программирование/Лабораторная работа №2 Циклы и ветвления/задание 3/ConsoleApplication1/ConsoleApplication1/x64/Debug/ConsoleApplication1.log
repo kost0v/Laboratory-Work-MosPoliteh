@@ -1,0 +1,4 @@
+﻿  ConsoleApplication1.cpp
+E:\учёба\Программирование\Лабораторная работа №2 Циклы и ветвления\задание 3\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(24,21): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+E:\учёба\Программирование\Лабораторная работа №2 Циклы и ветвления\задание 3\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(26,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  ConsoleApplication1.vcxproj -> E:\учёба\Программирование\Лабораторная работа №2 Циклы и ветвления\задание 3\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

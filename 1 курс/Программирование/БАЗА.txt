@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <Windows.h>
+
+using namespace std;
+
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int checknomber;
+	for (int checknomber = -1; checknomber != 0;) {
+		switch (checknomber)
+		{
+		case 1:
+			task1();
+			cout << "" << endl;
+			break;
+		case 2:
+			task2();
+			cout << "" << endl;
+			break;
+		case 3:
+			task3();
+			cout << "" << endl;
+			break;
+		case 4:
+			task4();
+			cout << "" << endl;
+			break;
+		case 5:
+			task5();
+			cout << "" << endl;
+			break;
+		}
+		cout << "Для окончания работы введите 0\n";
+		cout << "Введите номер задания: ";
+		cin >> checknomber;;
+	}
+}
